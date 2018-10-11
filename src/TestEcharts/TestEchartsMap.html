@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+   <script src="../../static/echarts.js"></script>
+  <script src="../../static/china.js"></script>
+  <script src="../../static/bmap.js"></script>
+</head>
+<body>
+  <div id="main" style="width: 1280px;height:600px;"></div>
+  <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+      title:{
+        text:'张军想这事我今天早上做的地图',
+        left:'center',
+        textStyle:{
+          color:'#404a49'
+        }
+      },
+      tooltip:{
+        trigger:'item'
+      },
+      toolbox:{
+        show:true,
+        orient:'vertical',
+        left:'right',
+        top:'center',
+        feature:{
+          dataView:{
+            readOnly:false
+          },
+          restore:{},
+          saveAsImage:{}
+        }
+      },
+      geo:{
+        map:'china',
+        label:{
+          emphasis:{
+            show:false
+          }
+        },
+        roam:true,
+        itemStyle:{
+          normal:{
+            areaColor:'#323c48',
+            borderColor:'#111'
+          },
+          emphasis:{
+            areaColor:'#2a333d'
+          }
+        }
+      }
+    };
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
